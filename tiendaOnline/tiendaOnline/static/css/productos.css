@@ -75,9 +75,43 @@ path{
 
 }
 
+.categorias {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 1rem;
+}
+.catTitle {
+    width: 10rem;
+    padding: .4rem;
+    border-bottom: 2px solid black;
+}
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    margin-top: 2rem;
+}
 .checkButtons {
     display: flex;
     flex-direction: row;
     gap:1rem;
     
+    
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    width: 70rem;
+    gap: 2rem;
+}
+
+.card {
+    width: 10rem;
+    height: 15rem;
+    border: 1px solid black;
+    border-radius: 1rem;
+    box-shadow: 0.1rem 0.1rem black;
+    flex: 0 1 auto;
 }
