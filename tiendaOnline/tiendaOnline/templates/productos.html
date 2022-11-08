@@ -58,6 +58,17 @@
         </div>
     </div>
     <div class="cards">
+        {% for producto in productos %}
+        <div class="card">
+            <div class="foto">
+                <img src='{% static "images/Vino-stock.jpg" %}' alt="vino" height="100%" width"100%">
+            </div> 
+            <div class="info">
+            <div class="nombre">{{producto.nombre}}</div>
+            <div class="precio">${{producto.pVenta}}</div>
+            </div>
+        </div>
+        {% endfor %}
         <div class="card">
             <div class="foto">
                 <img src='{% static "images/Vino-stock.jpg" %}' alt="vino" height="100%" width"100%">
@@ -66,8 +77,8 @@
             <div class="nombre">Vino</div>
             <div class="precio">$520</div>
             </div>
-
         </div>
+
         <div class="card">
             <div class="foto">
                 <img src='{% static "images/ron.jpg" %}' alt="vino" height="100%" width='100%'>
@@ -77,14 +88,7 @@
             <div class="precio">$520</div>
         </div>
         </div>
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
+        
     </div>
 </div>
 {% endblock contenido %}

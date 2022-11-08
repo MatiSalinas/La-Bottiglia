@@ -1,20 +1,14 @@
-from cgitb import html
-from django.http import HttpResponse
-from django.template import Template, Context
+
 from django.shortcuts import render
+from database.models import *
 
 def productosTemplate(request):
-    productos_html = open('D:/Users/matil/ProyectosDjango/La_bottiglia/tiendaOnline/tiendaOnline/templates/productos.html')
+    productos = bottigliaDb.objects.all()
+    productos_lista = []
+    for producto in productos:
+        productos_lista.append(producto)
     
-    plantilla = Template(productos_html.read())
-
-    productos_html.close()
-
-    producto_context = Context()
-
-    documento = plantilla.render(producto_context)
-
-    return HttpResponse(documento)
+    return render(request,'productos.html',{'productos':productos_lista})
 
 def contacto(request):
     
