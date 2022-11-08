@@ -21,6 +21,7 @@ class bottigliaDb(models.Model):
     GIN = 'GIN'
     CERVEZA = 'CER'
     CRISTALERIA = 'CR'
+    TEQUILA = 'TE'
     VODKA = 'VK'
     GASEOSA = 'GA'
     JUGOS = 'JU'
@@ -39,6 +40,7 @@ class bottigliaDb(models.Model):
         (GIN , 'Gin'),
         (CERVEZA , 'Cerveza'),
         (CRISTALERIA , 'Cristaleria'),
+        (TEQUILA,'Tequila'),
         (VODKA , 'Vodka'),
         (GASEOSA , 'Gaseosa'),
         (JUGOS , 'Jugos'),
@@ -49,4 +51,5 @@ class bottigliaDb(models.Model):
     choices=TIPO_CHOICES,
     default=OTRO,
     )
+    img = models.CharField(max_length = 70,default='images/Vino-stock.jpg',null=True)
     
