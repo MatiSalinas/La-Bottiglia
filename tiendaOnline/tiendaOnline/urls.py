@@ -19,5 +19,8 @@ from tiendaOnline.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('productos/',productosTemplate)
+    path('productos/',productosTemplate, name='tienda-productos'),
+    path('contacto/',contacto, name='tienda-contacto'),
+    path('inicio/',inicio, name='tienda-inicio'),
+    path('labottiglia/',labottiglia, name='tienda-labottiglia'),
 ]
