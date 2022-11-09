@@ -116,13 +116,15 @@ path{
     box-shadow: 0.1rem 0.1rem black;
     flex: 0 1 auto;
     display: flex;
+    /* justify-content: center;
+    align-items: center; */
+    overflow: hidden;
     flex-direction: column;
 }
 .foto{
-    width: 100%;
-    height: 100%;
-    padding:1rem;
-    overflow:visible;
+    flex-shrink: 2;
+    min-width: 100%;
+    min-height: 100%;
 }
 .info {
     position: relative;
@@ -140,4 +142,16 @@ path{
 }
 .nombre {
     bottom: 2rem;
+}
+.logo{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 1px;
+}
+.bottiLogo{
+    width: 7.5rem;
+    height: 4.5rem;
 }

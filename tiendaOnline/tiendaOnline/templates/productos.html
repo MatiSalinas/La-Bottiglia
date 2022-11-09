@@ -59,10 +59,17 @@
     </div>
     <div class="cards">
         {% for producto in productos %}
+
         <div class="card">
             <div class="foto">
-                <img src='{% static "images/Vino-stock.jpg" %}' alt="vino" height="100%" width"100%">
-            </div> 
+                {% if producto.img %}
+                <img src='../{{producto.img}}' alt="vino" height="100%" width"100%">
+                {% else %}
+                <img src='{% static "images/cordero-lobo-cs.jpg" %}' alt="vino" height="100%" width"100%">
+                {% endif %}
+
+            </div>
+            
             <div class="info">
             <div class="nombre">{{producto.nombre}}</div>
             <div class="precio">${{producto.pVenta}}</div>
@@ -71,7 +78,7 @@
         {% endfor %}
         <div class="card">
             <div class="foto">
-                <img src='{% static "images/Vino-stock.jpg" %}' alt="vino" height="100%" width"100%">
+                <img src='{% static "images/cordero-lobo-cs.jpg" %}' alt="vino" height="100%" width"100%">
             </div> 
             <div class="info">
             <div class="nombre">Vino</div>
@@ -81,7 +88,7 @@
 
         <div class="card">
             <div class="foto">
-                <img src='{% static "images/ron.jpg" %}' alt="vino" height="100%" width='100%'>
+                <img src='{% static "images/ron.jpg" %}' alt="vino">
             </div> 
             <div class="info">
             <div class="nombre">Ron</div>

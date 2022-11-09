@@ -51,5 +51,5 @@ class bottigliaDb(models.Model):
     choices=TIPO_CHOICES,
     default=OTRO,
     )
-    img = models.CharField(max_length = 70,default='images/Vino-stock.jpg',null=True)
+    img = models.ImageField(upload_to='tiendaOnline/files/images',blank=True)
     

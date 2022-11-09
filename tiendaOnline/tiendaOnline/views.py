@@ -21,3 +21,4 @@ def inicio(request):
 def labottiglia(request):
     
     return render(request,'labottiglia.html')
+    
