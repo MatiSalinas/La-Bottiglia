@@ -9,8 +9,12 @@
 3-Formularios para ingresar datos a cada uno de los models
 ![alt text](https://i.imgur.com/KUVdned.png)
 
+
 Ejemplo de como se ven los formularios
 ![alt text](https://i.imgur.com/ofQzOBn.png)
 
 4-Formulario para buscar algo en la base de datos
 ![alt text](https://i.imgur.com/qc8YMy7.png)
+
+Checkboxes funcionales
+![alt text](https://i.imgur.com/CekgudX.gif)
