@@ -65,6 +65,15 @@
         <a href="{% url 'tienda-labottiglia' %}" class="stickyItems">LA BOTTIGLIA</a>
         <a href="{% url 'tienda-productos' %}" class="stickyItems">TIENDA</a>
         <a href="{% url 'tienda-contacto' %}" class="stickyItems">CONTACTO</a>
+        <div class="dropdown">
+            <button class="dropbtn">PANEL</button>
+            <div class="dropdown-content">
+                <a href="{% url 'tienda-producto-nuevo' %}">Cargar Producto</a>
+                <a href="{% url 'tienda-entradas' %}">Cargar Entradas</a>
+                <a href="{% url 'tienda-salidas' %}">Cargar Salidas</a>
+                <a href="{% url 'tienda-empleados' %}">Cargar Empleado</a>
+            </div>
+        </div>
         
     </div>
 {% block contenido %}

@@ -4,6 +4,7 @@
 
 <form action="" method="post">
 {% csrf_token %}
+<div class="container">
 <table>
     {{formulario.as_table}}
 </table>
@@ -12,7 +13,7 @@
 <input type="submit" value="Cargar">
 
 </form>
-
+</div>
 
 {% endblock contenido %}
 

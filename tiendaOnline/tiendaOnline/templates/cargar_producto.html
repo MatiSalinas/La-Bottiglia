@@ -2,12 +2,12 @@
 
 {% block contenido %}
 
-<form action="" method="post">
+<form action="" method="post" enctype="multipart/form-data">
 {% csrf_token %}
 <div class="container">
     
 <table>
-    <th>cargar entradas</th>
+    <th>cargar Producto</th>
     {{formulario.as_table}}
 </table>
 

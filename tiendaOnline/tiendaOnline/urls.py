@@ -22,10 +22,15 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('productos/',productosTemplate, name='tienda-productos'),
-    path('productos',productosBusqueda,name='tienda-busqueda'),
+    path('productos/resultado',productosBusqueda,name='tienda-busqueda'),
     path('contacto/',contacto, name='tienda-contacto'),
     path('inicio/',inicio, name='tienda-inicio'),
     path('labottiglia/',labottiglia, name='tienda-labottiglia'),
+    path('panel/crear-entrada',crear_entradas,name="tienda-entradas"),
+    path('panel/crear-salida',crear_salidas,name="tienda-salidas"),
+    path('panel/crear-empleado',crear_empleado,name="tienda-empleados"),
+    path('panel/cargar-producto',cargar_producto,name="tienda-producto-nuevo")
+
 ]
 
 urlpatterns +=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
