@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block contenido %}
+<div class="container">
+<div class="cards">
+    {% for producto in productos %}
+
+    <div class="card">
+        <div class="foto">
+            {% if producto.img %}
+            <img src='../{{producto.img}}' alt="vino" height="100%" width"100%">
+            {% else %}
+            <img src='{% static "images/cordero-lobo-cs.jpg" %}' alt="vino" height="100%" width"100%">
+            {% endif %}
+
+        </div>
+        
+        <div class="info">
+        <div class="nombre">{{producto.nombre}}</div>
+        <div class="precio">${{producto.pVenta}}</div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+</div>
+{% endblock contenido %}

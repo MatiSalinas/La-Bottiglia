@@ -58,7 +58,7 @@ ROOT_URLCONF = 'tiendaOnline.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [r'D:\Users\matil\ProyectosDjango\La_bottiglia\tiendaOnline\tiendaOnline\templates'],
+        'DIRS': [os.path.join(BASE_DIR, 'tiendaOnline/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

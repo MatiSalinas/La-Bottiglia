@@ -1,6 +1,24 @@
 from django.db import models
 
 # Create your models here.
+class empleados(models.Model):
+    nombre = models.CharField(max_length =50)
+    apellido = models.CharField(max_length =50)
+    cargo = models.CharField(max_length =50)
+    salario = models.IntegerField()
+
+class entradas(models.Model):
+    codigo = models.CharField(max_length = 50)
+    nombre = models.CharField(max_length = 50)
+    fecha = models.DateField()
+    stock = models.IntegerField()
+
+class salidas(models.Model):
+    codigo = models.CharField(max_length = 50)
+    nombre = models.CharField(max_length = 50)
+    fecha = models.DateField()
+    stock = models.IntegerField()
+    
 class bottigliaDb(models.Model):
     codigo = models.CharField(max_length = 50)
     nombre = models.CharField(max_length = 50)
