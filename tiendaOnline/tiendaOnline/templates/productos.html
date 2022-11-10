@@ -15,48 +15,52 @@
     </select>
 </div>
 <div class="container">
+    <form action="{% url 'tienda-check' %}" method="post">
+    {% csrf_token %}
     <div class="checkbuttons">
         <div>
-            <input type="checkbox" name="productSelect" id="vinos" value="vinos">
-            <label for="vinos">Vinos</label>
+            <input type="checkbox" name="productSelect" id="cerveza" value="CERVEZA">
+            <label for="cerveza">Cerveza</label>
         </div>
         <div>
-            <input type="checkbox" name="productSelect" id="malbec" value="malbec">
+            <input type="checkbox" name="productSelect" id="malbec" value="VINOMALBEC">
             <label for="malbec">Malbec</label>
         </div>
         <div>
-            <input type="checkbox" name="productSelect" id="blanco" value="blanco">
+            <input type="checkbox" name="productSelect" id="blanco" value="VINOBLANCO">
             <label for="blanco">Blancos</label>
         </div>
         <div>
-            <input type="checkbox" name="productSelect" id="blend" value="ble">
+            <input type="checkbox" name="productSelect" id="blend" value="VINOBLEND">
             <label for="blend">Blends</label>
         </div>
         <div>
-            <input type="checkbox" name="productSelect" id="destilados" value="destilados">
-            <label for="destilados">Destilados</label>
+            <input type="checkbox" name="productSelect" id="Aperitivo" value="APERITIVO">
+            <label for="Aperitivo">Aperitivos</label>
         </div>
         <div>
-            <input type="checkbox" name="productSelect" id="vodka" value="vodka">
+            <input type="checkbox" name="productSelect" id="vodka" value="VODKA">
             <label for="vodka">Vodka</label>
         </div>
         <div>
-            <input type="checkbox" name="productSelect" id="whisky" value="whisky">
+            <input type="checkbox" name="productSelect" id="whisky" value="WHISKY">
             <label for="whisky">Whisky</label>
         </div>
         <div>
-            <input type="checkbox" name="productSelect" id="ron" value="ron">
+            <input type="checkbox" name="productSelect" id="ron" value="RON">
             <label for="ron">Ron</label>
         </div>
         <div>
-            <input type="checkbox" name="productSelect" id="gin" value="gin">
+            <input type="checkbox" name="productSelect" id="gin" value="GIN">
             <label for="gin">Gines</label>
         </div>
         <div>
-            <input type="checkbox" name="productSelect" id="esmpumantes" value="esmpumantes">
-            <label for="esmpumantes">Espumantes</label>
+            <input type="checkbox" name="productSelect" id="Esmpumantes" value="ESPUMANTE">
+            <label for="Esmpumantes">Espumantes</label>
         </div>
     </div>
+    <input type="submit" value="Aplicar Filtros">
+</form>
     <div class="cards">
         {% for producto in productos %}
 

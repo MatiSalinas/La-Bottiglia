@@ -2,6 +2,7 @@
 from django.shortcuts import render
 from database.models import *
 from database.forms import SalidasFormulario,EntradasFormulario,EmpleadoFormulario,NuevoProductoFormulario
+import json
 
 
 def productosTemplate(request):
@@ -11,6 +12,16 @@ def productosTemplate(request):
         productos_lista.append(producto)
     
     return render(request,'productos.html',{'productos':productos_lista})
+
+def productosCheckbox(request):
+    if request.method == 'POST':
+        tipos = dict(request.POST)
+        print(tipos['productSelect'])
+        productos = bottigliaDb.objects.filter(tipo__in=tipos['productSelect'])
+        return render(request,'producto_check.html',{'productos':productos})
+        
+    productos = bottigliaDb.objects.filter(tipo__icontains='snack')
+    return render(request,'producto_check.html',{'productos':productos})
 
 def productosBusqueda(request):
     nombre_producto = request.GET['search']

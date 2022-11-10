@@ -51,3 +51,25 @@ class NuevoProductoFormulario(forms.Form):
     ]
     tipo = forms.ChoiceField(choices=TIPO_CHOICES)
     img = forms.ImageField()
+
+class CheckBoxForm(forms.Form):
+    TIPO_CHOICES = [
+        ('VINO MALBEC' , 'VinoMalbec'),
+        ('VINO BLANCO' , 'VinoBlanco'),
+        ('VINO BLEND' , 'VinoBlend'),
+        ('VINO CABERNET' , 'VinoCavernet'),
+        ('CHAMPANGNE' , 'Champagne'),
+        ('RON' , 'Ron'),
+        ('WHISKY' , 'Whisky'),
+        ('APERITIVO' , 'Aperitivo'),
+        ('GIN' , 'Gin'),
+        ('CERVEZA' , 'Cerveza'),
+        ('CRISTALERIA' , 'Cristaleria'),
+        ('TEQUILA','Tequila'),
+        ('VODKA' , 'Vodka'),
+        ('GASEOSA' , 'Gaseosa'),
+        ('JUGOS' , 'Jugos'),
+        ('SNACKS' , 'Snacks'),
+        ('OTROs' , 'Otro'),
+    ]
+    tipos = forms.CheckboxSelectMultiple(choices=TIPO_CHOICES)

@@ -23,6 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('productos/',productosTemplate, name='tienda-productos'),
     path('productos/resultado',productosBusqueda,name='tienda-busqueda'),
+    path('productos/check',productosCheckbox,name='tienda-check'),
     path('contacto/',contacto, name='tienda-contacto'),
     path('',inicio, name='tienda-inicio'),
     path('labottiglia/',labottiglia, name='tienda-labottiglia'),
