@@ -18,3 +18,5 @@ Ejemplo de como se ven los formularios
 
 Checkboxes funcionales
 ![alt text](https://i.imgur.com/CekgudX.gif)
+
+Las views y urls se encuentras todas dentro de tiendaOnline, los models y forms dentro de database
