@@ -14,7 +14,7 @@ def productosTemplate(request):
 
 def productosCheckbox(request):
     if request.method == 'POST':
-        tipos = dict(request.POST)
+        tipos = dict(request.POST) #convertimos en diccionario el post(es necesario para poder acceder a listas dentro de un queryobject)
         if len(tipos)==1: #Si el forms fue enviado vacio entra este if
             productos = bottigliaDb.objects.filter(tipo__icontains='')
             return render(request,'producto_check.html',{'productos':productos})
