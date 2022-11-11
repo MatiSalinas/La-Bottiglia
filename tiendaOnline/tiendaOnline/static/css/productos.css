@@ -138,7 +138,6 @@ path{
 }
 .nombre,.precio {
     position:absolute;
-    bottom: 1rem;
     margin: 0;
     padding: 0;
     background-color: rgb(17, 17, 17);
@@ -146,6 +145,9 @@ path{
     color: #C8C9C7;
     width: 100%;
     text-align: center;
+}
+.precio {
+bottom: 0;
 }
 .nombre {
     bottom: 2rem;
