@@ -19,7 +19,7 @@ class EntradasFormulario(forms.Form):
 class SalidasFormulario(forms.Form):
     codigo = forms.CharField()
     nombre = forms.CharField()
-    fecha = forms.DateField(initial=datetime.date.today)
+    fecha = forms.DateField(initial=datetime.date.today) 
     stock = forms.IntegerField()
 
 class NuevoProductoFormulario(forms.Form):
@@ -30,6 +30,7 @@ class NuevoProductoFormulario(forms.Form):
     stock = forms.IntegerField()
     pCompra = forms.FloatField()
     pVenta = forms.FloatField()
+    #lista con las opciones para el formulario
     TIPO_CHOICES = [
         ('VINOMALBEC' , 'Vino Malbec'),
         ('VINOBLANCO' , 'Vino Blanco'),
@@ -52,24 +53,5 @@ class NuevoProductoFormulario(forms.Form):
     tipo = forms.ChoiceField(choices=TIPO_CHOICES)
     img = forms.ImageField()
 
-class CheckBoxForm(forms.Form):
-    TIPO_CHOICES = [
-        ('VINO MALBEC' , 'VinoMalbec'),
-        ('VINO BLANCO' , 'VinoBlanco'),
-        ('VINO BLEND' , 'VinoBlend'),
-        ('VINO CABERNET' , 'VinoCavernet'),
-        ('CHAMPANGNE' , 'Champagne'),
-        ('RON' , 'Ron'),
-        ('WHISKY' , 'Whisky'),
-        ('APERITIVO' , 'Aperitivo'),
-        ('GIN' , 'Gin'),
-        ('CERVEZA' , 'Cerveza'),
-        ('CRISTALERIA' , 'Cristaleria'),
-        ('TEQUILA','Tequila'),
-        ('VODKA' , 'Vodka'),
-        ('GASEOSA' , 'Gaseosa'),
-        ('JUGOS' , 'Jugos'),
-        ('SNACKS' , 'Snacks'),
-        ('OTROs' , 'Otro'),
-    ]
-    tipos = forms.CheckboxSelectMultiple(choices=TIPO_CHOICES)
+
+

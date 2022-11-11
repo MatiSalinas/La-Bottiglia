@@ -2,7 +2,6 @@
 from django.shortcuts import render
 from database.models import *
 from database.forms import SalidasFormulario,EntradasFormulario,EmpleadoFormulario,NuevoProductoFormulario
-import json
 
 
 def productosTemplate(request):
@@ -16,13 +15,13 @@ def productosTemplate(request):
 def productosCheckbox(request):
     if request.method == 'POST':
         tipos = dict(request.POST)
-        if len(tipos)==1:
+        if len(tipos)==1: #Si el forms fue enviado vacio entra este if
             productos = bottigliaDb.objects.filter(tipo__icontains='')
             return render(request,'producto_check.html',{'productos':productos})
         productos = bottigliaDb.objects.filter(tipo__in=tipos['productSelect'])
         return render(request,'producto_check.html',{'productos':productos})
         
-    productos = bottigliaDb.objects.filter(tipo__icontains='snack')
+    productos = bottigliaDb.objects.filter(tipo__icontains='')
     return render(request,'producto_check.html',{'productos':productos})
 
 def productosBusqueda(request):
@@ -44,17 +43,17 @@ def labottiglia(request):
 
 def crear_entradas(request):
     if request.method == "POST":
-        formulario = EntradasFormulario(request.POST)
+        formulario = EntradasFormulario(request.POST) #tomamos los datos del formulario
 
-        if formulario.is_valid():
+        if formulario.is_valid(): #nos aseguramos que la data esta bien
 
-            data = formulario.cleaned_data
+            data = formulario.cleaned_data #la limpiamos
 
             entrada = entradas(codigo=data['codigo'],nombre=data['nombre'],fecha=data['fecha'],stock=data['stock'])
 
-            entrada.save()
+            entrada.save() #guardamos en la base de datos
 
-            formulario = EntradasFormulario()
+            formulario = EntradasFormulario() #reiniciamos el formulario
 
             return render(request,'cargar_entradas.html',{'formulario':formulario})
 

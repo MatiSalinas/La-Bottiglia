@@ -55,5 +55,5 @@ class bottigliaDb(models.Model):
     )
     img = models.ImageField(upload_to='tiendaOnline/files/images',blank=True)
     def __str__(self):
-        return '{}-{}'.format(self.nombre,self.tipo)
+        return '{}-{}'.format(self.nombre,self.tipo) #cambiamos los nombres en el admin panel
     
