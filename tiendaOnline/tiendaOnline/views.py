@@ -16,7 +16,9 @@ def productosTemplate(request):
 def productosCheckbox(request):
     if request.method == 'POST':
         tipos = dict(request.POST)
-        print(tipos['productSelect'])
+        if len(tipos)==1:
+            productos = bottigliaDb.objects.filter(tipo__icontains='')
+            return render(request,'producto_check.html',{'productos':productos})
         productos = bottigliaDb.objects.filter(tipo__in=tipos['productSelect'])
         return render(request,'producto_check.html',{'productos':productos})
         

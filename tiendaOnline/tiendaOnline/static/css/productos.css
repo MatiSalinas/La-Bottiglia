@@ -41,6 +41,7 @@ a{
 }
 h2 {
     color:#C8C9C7;
+    font-size: 2rem;
 }
 
 .redes{
@@ -153,8 +154,8 @@ path{
     padding: 0;
     margin: 0;
     display: flex;
-    justify-content: center;
-    align-items: flex-end;
+    /* justify-content: center;
+    align-items: flex-end; */
     gap: 1px;
 }
 .bottiLogo{
