@@ -6,11 +6,7 @@ from database.forms import SalidasFormulario,EntradasFormulario,EmpleadoFormular
 
 def productosTemplate(request):
     productos = bottigliaDb.objects.all()
-    productos_lista = []
-    for producto in productos:
-        productos_lista.append(producto)
-    
-    return render(request,'productos.html',{'productos':productos_lista})
+    return render(request,'productos.html',{'productos':productos})
 
 def productosCheckbox(request):
     if request.method == 'POST':
