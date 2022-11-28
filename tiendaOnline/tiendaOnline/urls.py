@@ -17,8 +17,8 @@ from django.contrib import admin
 from django.urls import path
 from tiendaOnline.views import *
 from django.conf.urls.static import static
-from django.conf import settings
-
+import tiendaOnline.settings as settings
+from database.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('productos/',productosTemplate, name='tienda-productos'),
@@ -30,8 +30,8 @@ urlpatterns = [
     path('panel/crear-entrada',crear_entradas,name="tienda-entradas"),
     path('panel/crear-salida',crear_salidas,name="tienda-salidas"),
     path('panel/crear-empleado',crear_empleado,name="tienda-empleados"),
-    path('panel/cargar-producto',cargar_producto,name="tienda-producto-nuevo")
-
+    path('panel/cargar-producto',cargar_producto,name="tienda-producto-nuevo"),
+    path('productos/detail/<pk>',ProductoDetail.as_view(),name='tienda-producto-detalle')
 ]
 
-urlpatterns +=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

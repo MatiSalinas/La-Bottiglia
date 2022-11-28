@@ -7,6 +7,9 @@ class empleados(models.Model):
     cargo = models.CharField(max_length =50)
     salario = models.IntegerField()
 
+    def __str__(self):
+        return f'{self.apellido} -- {self.cargo}'
+
 class entradas(models.Model):
     codigo = models.CharField(max_length = 50)
     nombre = models.CharField(max_length = 50)
@@ -53,7 +56,7 @@ class bottigliaDb(models.Model):
     choices=TIPO_CHOICES,
     default='OTRO',
     )
-    img = models.ImageField(upload_to='tiendaOnline/files/images',blank=True)
+    img = models.ImageField(upload_to='productos',blank=True)
     def __str__(self):
         return '{}-{}'.format(self.nombre,self.tipo) #cambiamos los nombres en el admin panel
     

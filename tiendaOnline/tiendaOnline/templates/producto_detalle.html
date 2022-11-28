@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contenido %}
+<div class="producto_container">
+    <div class="img_container">
+        {% if bottigliadb.img %}
+        <img src="../../media/{{bottigliadb.img}}" alt="" class="detail_img">
+        {% else %}
+        <img src='{% static "images/cordero-lobo-cs.jpg" %}' alt="vino" class="detail_img">
+        {% endif %}
+        
+    </div>
+    <div class="detail_container">
+        <h4 class="producto_nombre">{{bottigliadb.nombre}}</h4>
+        <br>
+        <p class="producto_precio">${{bottigliadb.pVenta}}</p>
+        <br>
+        <p class="producto_categoria">Categoria:{{bottigliadb.tipo}}</p>
+        <p class="stock">Stock:{{bottigliadb.stock}}</p>
+    </div>
+</div>
+{% endblock contenido %}

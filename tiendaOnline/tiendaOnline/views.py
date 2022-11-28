@@ -2,7 +2,7 @@
 from django.shortcuts import render
 from database.models import *
 from database.forms import SalidasFormulario,EntradasFormulario,EmpleadoFormulario,NuevoProductoFormulario
-
+from django.views.generic import DetailView
 
 def productosTemplate(request):
     productos = bottigliaDb.objects.all()
@@ -131,3 +131,7 @@ def crear_empleado(request):
     
 
     return render(request, 'crear_empleados.html')
+
+class ProductoDetail(DetailView):
+    model = bottigliaDb
+    template_name = 'producto_detalle.html'
