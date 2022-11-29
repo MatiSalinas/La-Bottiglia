@@ -3,9 +3,10 @@
 
 {% block contenido %}
 <div class="container">
-<div class="cards">
+    {% if productos %}
+    <div class="cards">
     {% for producto in productos %}
-
+    
     <a href="{% url 'tienda-producto-detalle' producto.id%} " class='imgdetail'>
         <div class="card">
             <div class="foto">
@@ -14,16 +15,19 @@
                 {% else %}
                 <img src='{% static "images/cordero-lobo-cs.jpg" %}' alt="vino" height="100%" width"100%">
                 {% endif %}
-
+                
             </div>
             
             <div class="info">
-            <div class="nombre">{{producto.nombre}}</div>
-            <div class="precio">${{producto.pVenta}}</div>
+                <div class="nombre">{{producto.nombre}}</div>
+                <div class="precio">${{producto.pVenta}}</div>
             </div>
         </div>
     </a>
     {% endfor %}
 </div>
+{% else %}
+<h2>No hay productos que coincidan con tu busqueda :(</h2>
+{% endif %}
 </div>
 {% endblock contenido %}
