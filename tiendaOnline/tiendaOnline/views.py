@@ -3,7 +3,7 @@ from django.shortcuts import render
 from database.models import *
 from database.forms import SalidasFormulario,EntradasFormulario,EmpleadoFormulario,NuevoProductoFormulario
 from django.views.generic import DetailView
-
+from django.contrib.admin.views.decorators import staff_member_required
 def productosTemplate(request):
     productos = bottigliaDb.objects.all()
     return render(request,'productos.html',{'productos':productos})
@@ -37,6 +37,7 @@ def labottiglia(request):
     
     return render(request,'labottiglia.html')
 
+@staff_member_required #se necesita ser parte del staff para acceder a estas vistas
 def crear_entradas(request):
     if request.method == "POST":
         formulario = EntradasFormulario(request.POST) #tomamos los datos del formulario
@@ -61,6 +62,7 @@ def crear_entradas(request):
 
     return render(request, 'cargar_entradas.html')
 
+@staff_member_required #se necesita ser parte del staff para acceder a estas vistas
 def crear_salidas(request):
     if request.method == "POST":
         formulario = SalidasFormulario(request.POST)
@@ -85,6 +87,7 @@ def crear_salidas(request):
 
     return render(request, 'cargar_salidas.html')
 
+@staff_member_required #se necesita ser parte del staff para acceder a estas vistas
 def cargar_producto(request):
     if request.method == "POST":
         formulario = NuevoProductoFormulario(request.POST,request.FILES)
@@ -108,6 +111,7 @@ def cargar_producto(request):
 
     return render(request, 'cargar_producto.html')
 
+@staff_member_required #se necesita ser parte del staff para acceder a estas vistas
 def crear_empleado(request):
     if request.method == "POST":
         formulario = EmpleadoFormulario(request.POST)

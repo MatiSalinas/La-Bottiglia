@@ -75,6 +75,9 @@
         <a href="{% url 'tienda-labottiglia' %}" class="stickyItems">LA BOTTIGLIA</a>
         <a href="{% url 'tienda-productos' %}" class="stickyItems">TIENDA</a>
         <a href="{% url 'tienda-contacto' %}" class="stickyItems">CONTACTO</a>
+
+        {% comment %} si el usuario es parte del staff se muestra el dropdown del panel {% endcomment %}
+        {% if request.user.is_staff %}
         <div class="dropdown">
             <button class="dropbtn">PANEL</button>
             <div class="dropdown-content">
@@ -84,6 +87,7 @@
                 <a href="{% url 'tienda-empleados' %}">Cargar Empleado</a>
             </div>
         </div>
+        {% endif %}
         
     </div>
 {% block contenido %}
