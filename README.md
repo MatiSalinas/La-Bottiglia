@@ -1,6 +1,7 @@
 # PRIMERA ENTREGA DEL PROYECTO FINAL
 
 ❌route about/
+<br>
 ✅route pages/ (lista todos los datos de un modelo)
 ✅route pages/<pageid> mas detalle al hacer click en un producto
 ✅no hay paginas aun
