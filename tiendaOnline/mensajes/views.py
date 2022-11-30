@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from mensajes.models import Mensajes
 import datetime
 
@@ -10,5 +10,5 @@ def contacto(request):
             fecha1 = datetime.datetime.now()
             msg = Mensajes(sender=request.user,msg_content=request.POST['msg_input'],fecha=fecha1)
             msg.save()
-        return render(request,'contacto.html',{'mensajes':mensajes})
+        return redirect('tienda-contacto')
     return render(request,'contacto.html',{'mensajes':mensajes})

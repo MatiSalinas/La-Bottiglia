@@ -374,3 +374,9 @@ bottom: 0;
     right: 9px;
     color: #212322;
 }
+
+.imgdetail:hover{
+    scale: 1.2;
+    outline: #111 solid 4px;
+    border-radius: 1rem;
+}
