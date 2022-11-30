@@ -6,6 +6,7 @@ class EmpleadoFormulario(forms.Form):
     apellido = forms.CharField()
     cargo = forms.CharField()
     salario = forms.IntegerField()
+    fechaInsercion = forms.DateField(initial=datetime.date.today)
 
 
 

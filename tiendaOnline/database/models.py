@@ -6,6 +6,7 @@ class empleados(models.Model):
     apellido = models.CharField(max_length =50)
     cargo = models.CharField(max_length =50)
     salario = models.IntegerField()
+    fechaInsercion = models.DateField(null=True,blank=True)
 
     def __str__(self):
         return f'{self.apellido} -- {self.cargo}'
@@ -23,7 +24,7 @@ class salidas(models.Model):
     stock = models.IntegerField()
     
 class bottigliaDb(models.Model):
-    codigo = models.CharField(max_length = 50)
+    codigo = models.CharField(max_length = 50,unique=True)
     nombre = models.CharField(max_length = 50)
     entrada = models.IntegerField()
     salida = models.IntegerField()
