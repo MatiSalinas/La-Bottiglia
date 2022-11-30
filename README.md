@@ -10,7 +10,7 @@
 Home<br>
 ❌Login<br>
 ❌signup<br>
-❌mensajes<br>
+✅mensajes<br>
 ❌perfiles<br>
 ❌logout<br>
 ✅create page<br>

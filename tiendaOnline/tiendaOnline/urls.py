@@ -19,6 +19,7 @@ from tiendaOnline.views import *
 from django.conf.urls.static import static
 import tiendaOnline.settings as settings
 from database.views import *
+from mensajes.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('productos/',productosTemplate, name='tienda-productos'),

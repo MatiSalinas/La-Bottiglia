@@ -25,9 +25,7 @@ def productosBusqueda(request):
     productos = bottigliaDb.objects.filter(nombre__icontains=nombre_producto)
     return render(request,'busqueda_productos.html',{'productos':productos})
 
-def contacto(request):
-    
-    return render(request,'contacto.html')
+
 
 def inicio(request):
     
