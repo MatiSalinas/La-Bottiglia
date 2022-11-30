@@ -49,6 +49,7 @@
         </div>
         <input type="submit" value="Aplicar Filtros">
     </form>
+    {% if productos %}
 <div class="cards">
     {% for producto in productos %}
 
@@ -71,6 +72,9 @@
     </a>
     {% endfor %}
 </div>
+{% else %}
+<h2>No hay productos que coincidan con tu busqueda :(</h2>
+{% endif %}
 </div>
 
 

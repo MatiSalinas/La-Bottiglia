@@ -84,8 +84,8 @@ path{
 
 .categorias {
     display: flex;
-    justify-content: space-evenly;
     margin-top: 1rem;
+    justify-content: space-around;
 }
 .catTitle {
     width: 10rem;
@@ -380,3 +380,31 @@ bottom: 0;
     outline: #111 solid 4px;
     border-radius: 1rem;
 }
+
+.delete_icon{
+    position: absolute;
+    bottom: 5rem;
+    right: 1rem;
+}
+.borrar_icon {
+    fill: red;
+}
+
+.borrar_icon:hover{
+    scale: 1.2;
+}
+.editar_icon {
+    fill: green;
+}
+.editar_icon:hover {
+    scale: 1.2;
+}
+.update_icon{
+    position: absolute;
+    bottom: 5rem;
+    left: 1rem;
+}
+
+.panelRow:nth-child(even) {
+    background-color: #D6EEEE;
+  }

@@ -20,6 +20,7 @@ from django.conf.urls.static import static
 import tiendaOnline.settings as settings
 from database.views import *
 from mensajes.views import *
+from django.contrib.admin.views.decorators import staff_member_required
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('productos/',productosTemplate, name='tienda-productos'),
@@ -32,7 +33,17 @@ urlpatterns = [
     path('panel/crear-salida',crear_salidas,name="tienda-salidas"),
     path('panel/crear-empleado',crear_empleado,name="tienda-empleados"),
     path('panel/cargar-producto',cargar_producto,name="tienda-producto-nuevo"),
-    path('productos/detail/<pk>',ProductoDetail.as_view(),name='tienda-producto-detalle')
+    path('productos/detail/<pk>',ProductoDetail.as_view(),name='tienda-producto-detalle'),
+    path('panel/productos/',staff_member_required(ProductosList.as_view()),name='panel-productos'),
+    path('panel/productos/editar/<pk>',staff_member_required(ProductosUpdate.as_view()),name='panel-productos-editar'),
+    path('panel/productos/borrar/<pk>',staff_member_required(ProductosDelete.as_view()),name='panel-productos-delete'),
+    path('panel/entradas/',staff_member_required(EntradasList.as_view()),name='panel-entradas'),
+    path('panel/entradas/editar/<pk>',staff_member_required(EntradasUpdate.as_view()),name='panel-entradas-editar'),
+    path('panel/entradas/borrar/<pk>',staff_member_required(EntradasDelete.as_view()),name='panel-entradas-delete'),
+    path('panel/salidas/',staff_member_required(SalidasList.as_view()),name='panel-salidas'),
+    path('panel/salidas/editar/<pk>',staff_member_required(SalidasUpdate.as_view()),name='panel-salidas-editar'),
+    path('panel/salidas/borrar/<pk>',staff_member_required(SalidasDelete.as_view()),name='panel-salidas-delete'),
 ]
+
 
 urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

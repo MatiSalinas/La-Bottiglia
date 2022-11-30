@@ -7,12 +7,12 @@
     <div class="svg"></div>
     <div class="svg"></div>
     <div class="order"></div>
-    <select name="" id="">
+    {% comment %} <select name="" id="">
         <option value="a-z">Nombre(A-Z)</option>
         <option value="z-a">Nombre(Z-A)</option>
         <option value="high">Mayor precio</option>
         <option value="low">Menor precio</option>
-    </select>
+    </select> {% endcomment %}
 </div>
 <div class="container">
     <form action="{% url 'tienda-check' %}" method="post" onsubmit="return checkForm(this);">
