@@ -8,6 +8,8 @@ from django.views.generic import ListView,UpdateView,DeleteView
 
 # Create your views here.
 
+
+#-------------ClassModelViews para producto --------------#
 class ProductosList(LoginRequiredMixin,ListView):
     model = bottigliaDb
     template_name = 'panel_productos.html'
@@ -24,6 +26,7 @@ class ProductosDelete(DeleteView):
     success_url = '/panel/productos/'
     template_name ='bottigliadb_confirm_delete.html'
 
+#-------------ClassModelViews para entradas --------------#
 class EntradasList(LoginRequiredMixin,ListView):
     model = entradas
     template_name = 'panel_entradas.html'
@@ -40,6 +43,7 @@ class EntradasDelete(DeleteView):
     success_url = '/panel/entradas/'
     template_name ='entradas_confirm_delete.html'
 
+#-------------ClassModelViews para salidas --------------#
 class SalidasList(LoginRequiredMixin,ListView):
     model = salidas
     template_name = 'panel_salidas.html'
@@ -55,3 +59,20 @@ class SalidasDelete(DeleteView):
     model = salidas
     success_url = '/panel/salidas/'
     template_name ='salidas_confirm_delete.html'
+
+#-------------ClassModelViews para empleados --------------#
+class EmpleadosList(LoginRequiredMixin,ListView):
+    model = empleados
+    template_name = 'panel_empleados.html'
+
+
+class EmpleadosUpdate(UpdateView):
+    model = empleados
+    success_url = '/panel/empleados'
+    fields = ['nombre','apellido','cargo','salario','fechaInsercion']
+    template_name ='panel_empleados_editar.html'
+
+class EmpleadosDelete(DeleteView):
+    model = empleados
+    success_url = '/panel/empleados/'
+    template_name ='empleados_confirm_delete.html'

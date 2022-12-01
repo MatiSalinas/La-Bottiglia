@@ -1,5 +1,7 @@
 from django import forms
 import datetime
+from database.models import bottigliaDb
+from django.core.exceptions import ValidationError
 
 class EmpleadoFormulario(forms.Form):
     nombre= forms.CharField()
@@ -53,6 +55,14 @@ class NuevoProductoFormulario(forms.Form):
     ]
     tipo = forms.ChoiceField(choices=TIPO_CHOICES)
     img = forms.ImageField()
+
+    #nos aseguramos de que no se pueda cargar un producto con el mismo codigo
+    def clean_producto(self):
+        codigo = self.cleaned_data['codigo']
+        print(codigo)
+        if bottigliaDb.objects.filter(codigo=codigo).exists():
+            raise ValidationError("Email already exists")
+        return codigo
 
 
 

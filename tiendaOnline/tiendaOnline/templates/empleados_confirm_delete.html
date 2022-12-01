@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<form method="post">
+    {% csrf_token %}
+    <p>
+        Esta seguro que desea borrar el Empleado? '{{object.nombre}}'
+        <input type="submit" value="Si">
+    </p>
+    <a href="{% url 'panel-empleados' %}">Volver al listado</a>
+</form>
+{% endblock contenido %}

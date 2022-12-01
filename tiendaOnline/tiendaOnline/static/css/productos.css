@@ -408,3 +408,23 @@ bottom: 0;
 .panelRow:nth-child(even) {
     background-color: #D6EEEE;
   }
+
+.botonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:1rem;
+}
+.botonContainerProducto {
+    height: 10vh;
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:1rem;
+}
+
+
+.agregar_icon{
+    fill: rgb(14, 107, 14);
+}
