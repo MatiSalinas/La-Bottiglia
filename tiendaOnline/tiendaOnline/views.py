@@ -4,6 +4,13 @@ from database.models import *
 from database.forms import SalidasFormulario,EntradasFormulario,EmpleadoFormulario,ProductoFormulario
 from django.views.generic import DetailView
 from django.contrib.admin.views.decorators import staff_member_required
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import login, authenticate, logout
+
+
+
+
+
 def productosTemplate(request):
     productos = bottigliaDb.objects.all()
     return render(request,'productos.html',{'productos':productos})
@@ -138,3 +145,33 @@ def crear_empleado(request):
 class ProductoDetail(DetailView):
     model = bottigliaDb
     template_name = 'producto_detalle.html'
+    
+    
+    
+# Vistas para hacer el login
+
+def iniciar_sesion(request):
+    
+    errors = ''
+    
+    formulario = AuthenticationForm() 
+    
+    if request.method == "POST":
+        
+        formulario = AuthenticationForm(request, data = request.POST)
+        
+        if formulario.is_valid():
+           data = formulario.cleaned_data.get('username')
+           user = authenticate(username=data["username"], password=data["password"])
+           
+           if user is not None:
+               login(request, user)
+               return redirect('tienda-inicio')
+           else:
+               return render(request, 'login.html', {"formulario": formulario, "errors": errors})
+    else: 
+        return render(request, 'login.html',{"formulario":formulario, "errors": formulario.errors})
+           
+            
+       
+    return render(request, 'login.html',{"formulario": formulario, "errors": errors} )

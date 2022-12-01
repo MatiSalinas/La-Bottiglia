@@ -55,6 +55,12 @@ urlpatterns = [
     path('panel/empleados/',staff_member_required(EmpleadosList.as_view()),name='panel-empleados'),
     path('panel/empleados/editar/<pk>',staff_member_required(EmpleadosUpdate.as_view()),name='panel-empleados-editar'),
     path('panel/empleados/borrar/<pk>',staff_member_required(EmpleadosDelete.as_view()),name='panel-empleados-delete'),
+    
+    #urls Login
+    path('login/', iniciar_sesion, name="auth-login")
+
+    
+    
 ]
 
 
