@@ -1,7 +1,7 @@
 
 from django.shortcuts import render
 from database.models import *
-from database.forms import SalidasFormulario,EntradasFormulario,EmpleadoFormulario,NuevoProductoFormulario
+from database.forms import SalidasFormulario,EntradasFormulario,EmpleadoFormulario,ProductoFormulario
 from django.views.generic import DetailView
 from django.contrib.admin.views.decorators import staff_member_required
 def productosTemplate(request):
@@ -51,7 +51,7 @@ def crear_entradas(request):
             formulario = EntradasFormulario() #reiniciamos el formulario
 
             return render(request,'cargar_entradas.html',{'formulario':formulario})
-
+        
     else:
         formulario = EntradasFormulario()
 
@@ -88,7 +88,7 @@ def crear_salidas(request):
 @staff_member_required #se necesita ser parte del staff para acceder a estas vistas
 def cargar_producto(request):
     if request.method == "POST":
-        formulario = NuevoProductoFormulario(request.POST,request.FILES)
+        formulario = ProductoFormulario(request.POST,request.FILES)
 
         if formulario.is_valid():
             
@@ -98,11 +98,12 @@ def cargar_producto(request):
 
             producto.save()
 
-            formulario = NuevoProductoFormulario()
+            formulario = ProductoFormulario()
             return render(request,'cargar_producto.html',{'formulario':formulario})
-            
+        else:
+            return render(request,'cargar_producto.html',{'formulario':formulario,'errors':formulario.errors})
     else:
-        formulario = NuevoProductoFormulario()
+        formulario = ProductoFormulario()
         
         return render(request,'cargar_producto.html',{'formulario':formulario})
     
