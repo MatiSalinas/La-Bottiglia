@@ -9,28 +9,28 @@
 ✅admin/<br>
 ✅mensajes<br>
 ✅list page<br>
-    ✅producto list<br>
-    ✅entradas list<br>
-    ✅salidas list<br>
-    ✅empleados list<br>
+&emsp;    ✅producto list<br>
+&emsp;    ✅entradas list<br>
+&emsp;   ✅salidas list<br>
+&emsp;   ✅empleados list<br>
 <br>
 ✅create page<br>
-    ✅producto create<br>
-    ✅entradas create<br>
-    ✅salidas create<br>
-    ✅empleados create<br>
+&emsp;    ✅producto create<br>
+&emsp;    ✅entradas create<br>
+&emsp;    ✅salidas create<br>
+&emsp;   ✅empleados create<br>
 <br>
 ✅update page<br>
-    ✅producto update<br>
-    ✅entradas update<br>
-    ✅salidas update<br>
-    ✅empleados update<br>
+&emsp;✅producto update<br>
+&emsp;✅entradas update<br>
+&emsp;    ✅salidas update<br>
+&emsp;    ✅empleados update<br>
 <br>
 ✅delete page<br>
-    ✅producto delete <br>
-    ✅entradas delete<br>
-    ✅salidas delete<br>
-    ✅empleados delete<br>
+&emsp;    ✅producto delete <br>
+&emsp;    ✅entradas delete<br>
+&emsp;    ✅salidas delete<br>
+&emsp;    ✅empleados delete<br>
 <br>
 ❌Home template<br>
 ❌Login<br>
