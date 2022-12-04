@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block contenido %}
+{{request.user}}
 <div class="producto_container">
     <div class="img_container">
         {% if bottigliadb.img %}

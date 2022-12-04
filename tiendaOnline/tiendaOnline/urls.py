@@ -21,6 +21,8 @@ import tiendaOnline.settings as settings
 from database.views import *
 from mensajes.views import *
 from django.contrib.admin.views.decorators import staff_member_required
+from django.contrib.auth.views import LogoutView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',inicio, name='tienda-inicio'),
@@ -57,9 +59,12 @@ urlpatterns = [
     path('panel/empleados/borrar/<pk>',staff_member_required(EmpleadosDelete.as_view()),name='panel-empleados-delete'),
     
     #urls Login
-    path('login/', iniciar_sesion, name="auth-login"),
-    path('register/', registrar_usuario, name='auth-register')
-
+    path('login/', iniciar_sesion, name='auth-login'),
+    path('register/', registrar_usuario, name='auth-register'),
+    
+    #url loguot 
+        
+    path('logout/', LogoutView.as_view(template_name='logout.html'), name='auth-logout')
     
     
 ]

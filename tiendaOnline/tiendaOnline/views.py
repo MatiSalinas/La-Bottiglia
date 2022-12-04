@@ -5,8 +5,8 @@ from database.forms import SalidasFormulario,EntradasFormulario,EmpleadoFormular
 from django.views.generic import DetailView
 from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
-from django.contrib.auth import login, authenticate, logout
-
+from django.contrib.auth import login, authenticate
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 
