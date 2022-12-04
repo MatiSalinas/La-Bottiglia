@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block contenido %}
+
+{{request.user}}
 
 {% if errors %}
     <p style="color: red">Errores en el registro de usuario: {{errors}}</p>
@@ -10,10 +13,9 @@
 
 {{ formulario.as_p }}
  
-<input type="submit" value="Iniciar sesion" >
+<input type="submit" value="Registrar Usuario" >
 
 </form>
 
 
-
-{% endblock %}
+{% endblock contenido %}

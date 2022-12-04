@@ -57,7 +57,8 @@ urlpatterns = [
     path('panel/empleados/borrar/<pk>',staff_member_required(EmpleadosDelete.as_view()),name='panel-empleados-delete'),
     
     #urls Login
-    path('login/', iniciar_sesion, name="auth-login")
+    path('login/', iniciar_sesion, name="auth-login"),
+    path('register/', registrar_usuario, name='auth-register')
 
     
     

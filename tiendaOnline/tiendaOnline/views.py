@@ -1,10 +1,10 @@
 
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from database.models import *
-from database.forms import SalidasFormulario,EntradasFormulario,EmpleadoFormulario,ProductoFormulario
+from database.forms import SalidasFormulario,EntradasFormulario,EmpleadoFormulario,ProductoFormulario, UserRegisterForm
 from django.views.generic import DetailView
 from django.contrib.admin.views.decorators import staff_member_required
-from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import login, authenticate, logout
 
 
@@ -158,10 +158,10 @@ def iniciar_sesion(request):
     
     if request.method == "POST":
         
-        formulario = AuthenticationForm(request, data = request.POST)
+        formulario = AuthenticationForm(request, data=request.POST)
         
         if formulario.is_valid():
-           data = formulario.cleaned_data.get('username')
+           data = formulario.cleaned_data
            user = authenticate(username=data["username"], password=data["password"])
            
            if user is not None:
@@ -172,6 +172,30 @@ def iniciar_sesion(request):
     else: 
         return render(request, 'login.html',{"formulario":formulario, "errors": formulario.errors})
            
-            
-       
+               
     return render(request, 'login.html',{"formulario": formulario, "errors": errors} )
+
+
+
+def registrar_usuario(request):
+     
+     
+     if request.method == "POST":
+        formulario = UserRegisterForm(request.POST)
+        
+        if formulario.is_valid():
+            
+            formulario.save()
+            return redirect("tienda-inicio")
+        else:
+            return render(request, "register.html", { "formulario": formulario, "errors": formulario.errors})
+     
+     formulario = UserCreationForm()
+     
+     return render(request, 'register.html',{"formulario": formulario})
+
+
+
+
+
+# agregar mas campos al avatar... 
