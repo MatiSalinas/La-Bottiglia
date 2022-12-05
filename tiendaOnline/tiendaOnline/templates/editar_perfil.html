@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block contenido %}
+
+
+
 
 {% if errors %}
     <p style="color: red">Errores en el registro de usuario: {{errors}}</p>
@@ -10,10 +14,8 @@
 
 {{ formulario.as_p }}
  
-<input type="submit" value="Iniciar sesion" >
+<input type="submit" value="Guardar" >
 
 </form>
 
-<p> No tenes cuenta? <a href="{% url 'auth-register'%}">Create una</a> </p>
-
-{% endblock %}
+{% endblock contenido %}

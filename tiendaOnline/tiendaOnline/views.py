@@ -1,9 +1,10 @@
 
 from django.shortcuts import render, redirect
 from database.models import *
-from database.forms import SalidasFormulario,EntradasFormulario,EmpleadoFormulario,ProductoFormulario, UserRegisterForm
+from database.forms import SalidasFormulario, EntradasFormulario, EmpleadoFormulario, ProductoFormulario, UserRegisterForm, UserEditForm, AvatarForm
 from django.views.generic import DetailView
 from django.contrib.admin.views.decorators import staff_member_required
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -156,46 +157,89 @@ def iniciar_sesion(request):
     
     formulario = AuthenticationForm() 
     
-    if request.method == "POST":
+    if request.method == 'POST':
         
         formulario = AuthenticationForm(request, data=request.POST)
         
         if formulario.is_valid():
            data = formulario.cleaned_data
-           user = authenticate(username=data["username"], password=data["password"])
+           user = authenticate(username=data['username'], password=data['password'])
            
            if user is not None:
                login(request, user)
                return redirect('tienda-inicio')
            else:
-               return render(request, 'login.html', {"formulario": formulario, "errors": errors})
+               return render(request, 'login.html', {'formulario': formulario, 'errors': errors})
     else: 
-        return render(request, 'login.html',{"formulario":formulario, "errors": formulario.errors})
+        return render(request, 'login.html',{'formulario':formulario, 'errors': formulario.errors})
            
                
-    return render(request, 'login.html',{"formulario": formulario, "errors": errors} )
+    return render(request, 'login.html',{'formulario': formulario, 'errors': errors} )
 
 
 
 def registrar_usuario(request):
      
      
-     if request.method == "POST":
+     if request.method == 'POST':
         formulario = UserRegisterForm(request.POST)
         
         if formulario.is_valid():
             
             formulario.save()
-            return redirect("tienda-inicio")
+            return redirect('tienda-inicio')
         else:
-            return render(request, "register.html", { "formulario": formulario, "errors": formulario.errors})
+            return render(request, 'register.html', { 'formulario': formulario, 'errors': formulario.errors})
      
      formulario = UserCreationForm()
      
-     return render(request, 'register.html',{"formulario": formulario})
+     return render(request, 'register.html',{'formulario': formulario})
 
 
 
+@login_required
+def editar_perfil(request):
 
+    usuario = request.user
 
-# agregar mas campos al avatar... 
+    if request.method == "POST":
+        
+        formulario = UserEditForm(request.POST)
+       
+        if formulario.is_valid():
+            data = formulario.cleaned_data           
+                                         
+            usuario.email = data['email']
+            usuario.first_name = data['first_name']
+            usuario.last_name = data['last_name']
+
+            usuario.save()
+            return redirect('tienda-inicio')
+        else:
+            return render(request, 'editar_perfil.html', {'formulario': formulario, 'errors': formulario.errors})
+    else:
+        
+        formulario = UserEditForm(initial = {'email': usuario.email, 'first_name': usuario.first_name, 'last_name': usuario.last_name})
+
+    return render(request, 'editar_perfil.html', {'formulario': formulario})
+
+@login_required
+def agregar_avatar(request):
+    
+    if request.method == "POST":
+        formulario = AvatarForm(request.POST, files=request.FILES)
+        print(request.FILES, request.POST)
+        if formulario.is_valid():
+            data = formulario.cleaned_data
+
+            usuario = request.user
+
+            avatar = Avatar(user=usuario, imagen=data['imagen'])
+            avatar.save()
+
+            return redirect('tienda-inicio')
+        else:
+            return render(request, 'agregar_avatar.html', {"form": formulario, "errors": formulario.errors })
+    formulario = AvatarForm()
+
+    return render(request, 'agregar_avatar.html', {"form": formulario})
