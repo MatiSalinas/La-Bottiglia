@@ -226,9 +226,11 @@ def editar_perfil(request):
 @login_required
 def agregar_avatar(request):
     
+    formulario = AvatarForm()
+    
     if request.method == "POST":
         formulario = AvatarForm(request.POST, files=request.FILES)
-        print(request.FILES, request.POST)
+     
         if formulario.is_valid():
             data = formulario.cleaned_data
 
@@ -239,7 +241,7 @@ def agregar_avatar(request):
 
             return redirect('tienda-inicio')
         else:
-            return render(request, 'agregar_avatar.html', {"form": formulario, "errors": formulario.errors })
-    formulario = AvatarForm()
+            return render(request, 'agregar_avatar.html', {'formulario': formulario, 'errors': formulario.errors })
+    
 
-    return render(request, 'agregar_avatar.html', {"form": formulario})
+    return render(request, 'agregar_avatar.html', {'formulario': formulario})
