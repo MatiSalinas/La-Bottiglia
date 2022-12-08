@@ -428,3 +428,45 @@ bottom: 0;
 .agregar_icon{
     fill: rgb(14, 107, 14);
 }
+
+.saludo {
+    margin-left: auto;
+}
+
+.loginContainer{
+    background-color: #111;
+    border-radius: 1rem;
+    padding: 2rem;
+    color: white;
+}
+
+.avatarInfo{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.userAvatar{
+    border-radius: 50%;
+    height: 4rem;
+    width: 4rem;
+    border: 2px solid #111;
+}
+
+.opcionesPerfil {
+    display: flex;
+    flex-direction: column;
+    background-color: #dfdfdf;
+    height: 9rem;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.aPerfil{
+
+color: #111;
+height: 2rem;
+}
+
+.selected{
+    border-bottom: 2px solid #000000;
+}

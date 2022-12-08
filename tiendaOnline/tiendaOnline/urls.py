@@ -66,6 +66,7 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(template_name='logout.html'), name='auth-logout'),
     
     #perfiles
+    path('perfil/',perfil,name='auth-perfil'),
     path('perfil/editar/', editar_perfil, name='auth-editar-perfil'),
     path('perfil/avatar/', agregar_avatar, name='auth-avatar')
     

@@ -66,3 +66,5 @@ class bottigliaDb(models.Model):
 class Avatar(models.Model):
         user = models.ForeignKey(User, on_delete=models.CASCADE)
         imagen = models.ImageField(upload_to='avatares', null=True, blank=True)
+        github = models.URLField(max_length=200,null=True,blank=True)
+        descripcion = models.CharField(max_length=200,null=True,blank=True)

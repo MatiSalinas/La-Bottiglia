@@ -2,8 +2,12 @@
 {% load static %}
 {% block contenido %}
 
+<div class="container">
 
 
+
+<div class="loginContainer">
+    <h3>Registra tu usuario</h3>
 {% if errors %}
     <p style="color: red">Errores en el registro de usuario: {{errors}}</p>
 {% endif %}
@@ -11,11 +15,12 @@
 <form method="post">
     {% csrf_token %}
 
-{{ formulario.as_p }}
- 
+    <table>
+{{ formulario.as_table }}
+</table>
 <input type="submit" value="Registrar Usuario" >
 
 </form>
-
-
+</div>
+</div>
 {% endblock contenido %}

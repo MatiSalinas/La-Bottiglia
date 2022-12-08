@@ -3,8 +3,14 @@
 {% block contenido %}
 
 
+<div class="container">
 
-
+    <div class="opcionesPerfil">
+        <a href="{% url 'auth-perfil'%}" class='aPerfil'>Perfil</a>
+        <a href="{% url 'auth-editar-perfil'%}" class='aPerfil'>Editar Perfil</a>
+        <a href="{% url 'auth-avatar'%}" class='aPerfil selected'>Editar Avatar e informacion</a>
+        
+    </div>
 {% if errors %}
     <p>Errores encontrados</p>
     <p style="color:red">{{errors}}</p>
@@ -13,11 +19,12 @@
 <form method="post" enctype="multipart/form-data">
 
     {% csrf_token %}
-
-    {{ form.as_p }}
+    <table>
+    {{ formulario.as_table }}
+</table>
     <input type="submit" value="Guardar">
 
 </form>
-
+</div>
 
 {% endblock contenido %}

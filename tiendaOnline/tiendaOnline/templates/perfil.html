@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contenido %}
+<div class="container">
+
+<div class="opcionesPerfil">
+    <a href="{% url 'auth-perfil'%}" class='aPerfil selected'>Perfil</a>
+    <a href="{% url 'auth-editar-perfil'%}" class='aPerfil'>Editar Perfil</a>
+    <a href="{% url 'auth-avatar'%}" class='aPerfil'>Editar Avatar e informacion</a>
+    
+</div>
+<div class="infoUsuario">
+<h3>Perfil</h3>
+<p>Nombre de usuario: {{request.user.username}}</p>
+<p>Nombre: {{request.user.first_name}}</p>
+<p>Apellido: {{request.user.last_name}}</p>
+<p>Email: {{request.user.email}}</p>
+
+
+{% if info1 %}
+{% for info in info1 %}
+<div class="avatarInfo">
+    <p>Avatar: </p><img class='userAvatar' src="../media/{{info1.imagen}}">
+    </div>
+    <div class="avatarInfo">
+    <p>Github: </p> <a href="{{info1.github}}">{{info1.github}}</a>
+    </div>
+    <p>Descripcion: {{info1.descripcion}}</p>
+{% endfor %}
+{% else %}
+<div class="avatarInfo">
+<p>Avatar: </p><img class='userAvatar' src="../media/{{info2.imagen}}">
+</div>
+<div class="avatarInfo">
+<p>Github: </p> <a href="{{info2.github}}">{{info2.github}}</a>
+</div>
+<p>Descripcion: {{info2.descripcion}}</p>
+{% endif %}
+
+</div>
+</div>
+{% endblock contenido %}

@@ -179,9 +179,7 @@ def iniciar_sesion(request):
 
 
 def registrar_usuario(request):
-     
-     
-     if request.method == 'POST':
+    if request.method == 'POST':
         formulario = UserRegisterForm(request.POST)
         
         if formulario.is_valid():
@@ -190,10 +188,10 @@ def registrar_usuario(request):
             return redirect('tienda-inicio')
         else:
             return render(request, 'register.html', { 'formulario': formulario, 'errors': formulario.errors})
-     
-     formulario = UserCreationForm()
-     
-     return render(request, 'register.html',{'formulario': formulario})
+    
+    formulario = UserRegisterForm()
+    
+    return render(request, 'register.html',{'formulario': formulario})
 
 
 
@@ -205,10 +203,10 @@ def editar_perfil(request):
     if request.method == "POST":
         
         formulario = UserEditForm(request.POST)
-       
+
         if formulario.is_valid():
             data = formulario.cleaned_data           
-                                         
+
             usuario.email = data['email']
             usuario.first_name = data['first_name']
             usuario.last_name = data['last_name']
@@ -230,13 +228,13 @@ def agregar_avatar(request):
     
     if request.method == "POST":
         formulario = AvatarForm(request.POST, files=request.FILES)
-     
+    
         if formulario.is_valid():
             data = formulario.cleaned_data
 
             usuario = request.user
 
-            avatar = Avatar(user=usuario, imagen=data['imagen'])
+            avatar = Avatar(user=usuario, imagen=data['imagen'],github=data['github'],descripcion=data['descripcion'])
             avatar.save()
 
             return redirect('tienda-inicio')
@@ -245,3 +243,16 @@ def agregar_avatar(request):
     
 
     return render(request, 'agregar_avatar.html', {'formulario': formulario})
+
+class UsuarioDetail(LoginRequiredMixin,DetailView):
+    model = User
+    template_name = 'usuario_detalle.html'
+
+@login_required
+def perfil(request):
+    info1 = Avatar.objects.filter(user=request.user.id)
+    if len(info1) != 1 and len(info1)!=0:
+        info2 = Avatar.objects.filter(user=request.user.id).order_by('-id')[0]
+        return render(request,'perfil.html',{'info2':info2})
+    
+    return render(request,'perfil.html',{'info1':info1})
