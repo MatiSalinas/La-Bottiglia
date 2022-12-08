@@ -37,9 +37,9 @@
 <br>
 ![crud funcional](https://i.imgur.com/GU281Rj.gif)
 ❌Home template<br>
-❌Login<br>
-❌signup<br>
-❌perfiles<br>
-❌logout<br>
-❌get profile<br>
-❌update profile<br>
+✅Login<br>
+✅signup<br>
+✅perfiles<br>
+&emsp;    ✅get profile<br>
+&emsp;    ✅update profile<br>
+✅logout<br>
