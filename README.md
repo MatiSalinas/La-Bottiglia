@@ -36,7 +36,7 @@
 &emsp;    ✅empleados delete<br>
 <br>
 ![crud funcional](https://i.imgur.com/GU281Rj.gif)
-❌Home template<br>
+✅Home template<br>
 ✅Login<br>
 ✅signup<br>
 ✅perfiles<br>

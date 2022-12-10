@@ -470,3 +470,60 @@ height: 2rem;
 .selected{
     border-bottom: 2px solid #000000;
 }
+
+.imgbotellas{
+    width: 100%;
+    height: 50%;
+    margin: 0;
+    padding: 0;
+}
+
+.regionales {
+    margin: 0;
+    background-color: #111;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.doly{
+    height: 20vw;
+    width: 30vw;
+}
+.regionalesContainer{
+    display: flex;
+    width: 100%;
+    height: 50vh;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+.espumanteinfo .vinoinfo .dolyinfo {
+
+}
+
+@keyframes slidy {
+    0% { left: 0%; }
+    20% { left: 0%; }
+    25% { left: -100%; }
+    45% { left: -100%; }
+    50% { left: -200%; }
+    70% { left: -200%; }
+    75% { left: -300%; }
+    95% { left: -300%; }
+    100% { left: -400%; }
+    }
+    
+    div#slider { overflow: hidden; }
+    div#slider figure img { width: 20%; float: left; }
+    div#slider figure { 
+    position: relative;
+    width: 500%;
+    margin: 0;
+    left: 0;
+    text-align: left;
+    font-size: 0;
+    animation: 30s slidy infinite; 
+    }
+    

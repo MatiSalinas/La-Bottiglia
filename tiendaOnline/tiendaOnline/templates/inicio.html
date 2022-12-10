@@ -6,8 +6,38 @@
 
 <link rel="stylesheet" href={% static 'css/inicio.css' %}>
 <div class="background">
-    <h3>TODO: agregar contenido</h3>
-    
-</div>
 
+    <div id="slider">
+        <figure>
+            <img src={% static 'images/botellas.jpg' %} alt="" class='imgbotellas'>
+            <img src={% static 'images/cajabeef.jpg' %} alt="" class='imgbotellas'>
+            <img src={% static 'images/cajavino.jpg' %} alt="" class='imgbotellas'>
+            <img src={% static 'images/botellas.jpg' %} alt="" class='imgbotellas'>
+            <img src={% static 'images/botellas.jpg' %} alt="" class='imgbotellas'>
+
+        </figure>
+    </div>
+
+    <div class="regionales">
+        <h1 style='color:white;'>Productos regionales</h1>
+        <div class="regionalesContainer">
+
+            <div class="dolyinfo">
+                <img src={% static 'images/gindoly.jpg' %} alt="" class='doly'>
+                <h2>Gin regional hecho en La Rioja</h2>
+            </div>
+
+            <div class="vinoinfo">
+                <img src={% static 'images/vinoriojano.jpg'%} alt="" class='doly'>
+                <h2>Vino chaniarmuyo</h2>
+            </div>  
+
+            <div class="espumanteinfo">
+                <img src={% static 'images/espumante.jpg'%} alt="" class='doly'>
+                <h2>Espumante de vinias riojanas</h2>
+            </div>
+        </div>
+    </div>
+
+</div>
 {% endblock contenido %}
