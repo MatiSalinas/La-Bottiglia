@@ -31,6 +31,10 @@ def inicio(request):
     
     return render(request,'inicio.html')
 
+def about(request):
+    
+    return render(request,'about.html')
+
 def labottiglia(request):
     
     return render(request,'labottiglia.html')

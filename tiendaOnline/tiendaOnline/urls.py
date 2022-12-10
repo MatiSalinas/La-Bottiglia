@@ -24,6 +24,7 @@ from django.contrib.admin.views.decorators import staff_member_required
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',inicio, name='tienda-inicio'),
+    path('about/', about , name='tienda-about'),
     path('labottiglia/',labottiglia, name='tienda-labottiglia'),
     path('contacto/',contacto, name='tienda-contacto'),
     path('productos/',productosTemplate, name='tienda-productos'),

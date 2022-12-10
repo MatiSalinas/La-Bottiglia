@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contenido %}
+<link rel="stylesheet" href={% static 'css/inicio.css' %}>
+<link rel="stylesheet" href={% static 'css/style.css' %}>
+
+<div class="background">
+    
+ <!-- About Section Begin -->
+<h1 clase="text-white" style="text-align: center; padding: 30px; ">About</h1>
+    <div class="container" style="margin-top: 0; padding: 50px;">
+
+            <div class="testimonial"style="width: 33%;">
+                <div class="testimonial__author">
+                    <div class="testimonial__author__text">
+                        <br><h5>Mauricio lamboglia </h5>
+                        <p>34 años</p>
+                    </div>
+                </div>
+                <div class="about__item">
+                    <p>Oriundo de Esperanza Santa fe. Apasionado del fútbol y amante de la cerveza.<br>
+                     Me interesa la programación por qué es una herramienta esencial para el mundo en el que vivimos.</p>
+                </div>
+                
+            </div>
+            <div class="testimonial"style="width: 33%;">
+                
+                <div class="testimonial__author">
+
+                    <div class="testimonial__author__text">
+                        <br><h5>Matias Salinas</h5>
+                        <p>22 años</p>
+                    </div>
+                </div><div class="about__item">
+
+                    <p>La Rioja, fanatico de la ufc, mi objetivo es ser un programador full stack.</p>
+                </div>
+                
+            </div>
+            <div class="testimonial" style="width: 33%;">
+                
+                <div class="testimonial__author">
+
+                    <div class="testimonial__author__text">
+                        <br><h5>Isaac Sanabria</h5>
+                        <p>29 Años</p>
+                    </div>
+                </div><div class="about__item">
+
+                    <p>Venezolano, Apasionado por la tecnologia, buscando ampliar mis conocimientos en nuevas tecnologias.</p>
+                </div>
+            </div>
+       
+    </div>
+
+<!-- About Section End -->
+      
+</div>
+
+{% endblock contenido %}
