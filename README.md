@@ -7,17 +7,17 @@
 ### Usuario con permisos de administracion usuario:password<br>
 profecoder:profesor1235<br>
 ✅Home template<br>
-<http://localhost:8000><br>
-o<br>
-<https://matixxdpls.pythonanywhere.com/><br>
+&emsp;<http://localhost:8000><br>
+&emsp;o<br>
+&emsp;<https://matixxdpls.pythonanywhere.com/><br>
 ✅route about/ <br>
-<http://localhost:8000/about><br>
-o<br>
-<https://matixxdpls.pythonanywhere.com/about><br>
+&emsp;<http://localhost:8000/about><br>
+&emsp;o<br>
+&emsp;<https://matixxdpls.pythonanywhere.com/about><br>
 ✅route pages/ (lista todos los datos de un modelo)<br>
-<http://localhost:8000/productos/><br>
-o<br>
-<https://matixxdpls.pythonanywhere.com/productos/><br>
+&emsp;<http://localhost:8000/productos/><br>
+&emsp;o<br>
+&emsp;<https://matixxdpls.pythonanywhere.com/productos/><br>
 
 ✅route pages/ mas detalle al hacer click en un producto<br>
 ✅no hay paginas aun<br>
@@ -26,9 +26,9 @@ o<br>
 ✅NavBar<br>
 ✅admin/<br>
 ✅mensajes<br>
-<http://localhost:8000/contacto/><br>
-o<br>
-<https://matixxdpls.pythonanywhere.com/contacto/>
+&emsp;<http://localhost:8000/contacto/><br>
+&emsp;o<br>
+&emsp;<https://matixxdpls.pythonanywhere.com/contacto/>
 
 ✅list page<br>
 &emsp;    ✅producto list <http://localhost:8000/panel/productos/> o <https://matixxdpls.pythonanywhere.com/panel/productos/><br> 
@@ -55,17 +55,17 @@ o<br>
 &emsp;    ✅empleados delete<br>
 <br>
 ✅Login<br>
-<http://localhost:8000/login/><br>
-o<br>
-<https://matixxdpls.pythonanywhere.com/login/><br>
+&emsp;<http://localhost:8000/login/><br>
+&emsp;o<br>
+&emsp;<https://matixxdpls.pythonanywhere.com/login/><br>
 ✅signup<br>
-<http://localhost:8000/register/><br>
-o<br>
-<https://matixxdpls.pythonanywhere.com/register/><br>
+&emsp;<http://localhost:8000/register/><br>
+&emsp;o<br>
+&emsp;<https://matixxdpls.pythonanywhere.com/register/><br>
 ✅perfiles<br>
-<http://localhost:8000/perfil/><br>
-o<br>
-<https://matixxdpls.pythonanywhere.com/perfil/><br>
+&emsp;<http://localhost:8000/perfil/><br>
+&emsp;o<br>
+&emsp;<https://matixxdpls.pythonanywhere.com/perfil/><br>
 &emsp;    ✅get profile<br>
 &emsp;    ✅update profile<br>
 ✅logout<br>
