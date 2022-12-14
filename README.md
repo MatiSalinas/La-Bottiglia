@@ -7,9 +7,9 @@
 ### Usuario con permisos de administracion usuario:password<br>
 profecoder:profesor1235<br>
 ✅Home template<br>
-<localhost:8000><br>
+<http://localhost:8000><br>
 ✅route about/ <br>
-<localhost:8000/about><br>
+<http://localhost:8000/about><br>
 ✅route pages/ (lista todos los datos de un modelo)<br>
 <http://localhost:8000/productos/><br>
 ✅route pages/ mas detalle al hacer click en un producto<br>
