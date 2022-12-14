@@ -9,15 +9,15 @@ profecoder:profesor1235<br>
 ✅Home template<br>
 <http://localhost:8000><br>
 o<br>
-<https://matixxdpls.pythonanywhere.com/>
+<https://matixxdpls.pythonanywhere.com/><br>
 ✅route about/ <br>
 <http://localhost:8000/about><br>
 o<br>
-<https://matixxdpls.pythonanywhere.com/about>
+<https://matixxdpls.pythonanywhere.com/about><br>
 ✅route pages/ (lista todos los datos de un modelo)<br>
 <http://localhost:8000/productos/><br>
 o<br>
-<https://matixxdpls.pythonanywhere.com/productos/>
+<https://matixxdpls.pythonanywhere.com/productos/><br>
 
 ✅route pages/ mas detalle al hacer click en un producto<br>
 ✅no hay paginas aun<br>
@@ -57,15 +57,15 @@ o<br>
 ✅Login<br>
 <http://localhost:8000/login/><br>
 o<br>
-<https://matixxdpls.pythonanywhere.com/login/>
+<https://matixxdpls.pythonanywhere.com/login/><br>
 ✅signup<br>
 <http://localhost:8000/register/><br>
 o<br>
-<https://matixxdpls.pythonanywhere.com/register/>
+<https://matixxdpls.pythonanywhere.com/register/><br>
 ✅perfiles<br>
 <http://localhost:8000/perfil/><br>
 o<br>
-<https://matixxdpls.pythonanywhere.com/perfil/>
+<https://matixxdpls.pythonanywhere.com/perfil/><br>
 &emsp;    ✅get profile<br>
 &emsp;    ✅update profile<br>
 ✅logout<br>
