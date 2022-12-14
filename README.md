@@ -8,10 +8,17 @@
 profecoder:profesor1235<br>
 ✅Home template<br>
 <http://localhost:8000><br>
+o<br>
+<https://matixxdpls.pythonanywhere.com/>
 ✅route about/ <br>
 <http://localhost:8000/about><br>
+o<br>
+<https://matixxdpls.pythonanywhere.com/about>
 ✅route pages/ (lista todos los datos de un modelo)<br>
 <http://localhost:8000/productos/><br>
+o<br>
+<https://matixxdpls.pythonanywhere.com/productos/>
+
 ✅route pages/ mas detalle al hacer click en un producto<br>
 ✅no hay paginas aun<br>
 ✅para crear,editar o borrar estar registrado como administrador<br>
@@ -20,12 +27,14 @@ profecoder:profesor1235<br>
 ✅admin/<br>
 ✅mensajes<br>
 <http://localhost:8000/contacto/><br>
+o<br>
+<https://matixxdpls.pythonanywhere.com/contacto/>
 
 ✅list page<br>
-&emsp;    ✅producto list <http://localhost:8000/panel/productos/> <br> 
-&emsp;    ✅entradas list <http://localhost:8000/panel/entradas/> <br>
-&emsp;    ✅salidas list <http://localhost:8000/panel/salidas/> <br>
-&emsp;    ✅empleados list <http://localhost:8000/panel/empleados/> <br>
+&emsp;    ✅producto list <http://localhost:8000/panel/productos/> o <https://matixxdpls.pythonanywhere.com/panel/productos/><br> 
+&emsp;    ✅entradas list <http://localhost:8000/panel/entradas/> o <https://matixxdpls.pythonanywhere.com/panel/entradas/> <br>
+&emsp;    ✅salidas list <http://localhost:8000/panel/salidas/> o <https://matixxdpls.pythonanywhere.com/panel/salidas/> <br>
+&emsp;    ✅empleados list <http://localhost:8000/panel/empleados/> o <https://matixxdpls.pythonanywhere.com/panel/empleados/> <br>
 <br>
 ✅create page<br>
 &emsp;    ✅producto create<br>
@@ -47,10 +56,16 @@ profecoder:profesor1235<br>
 <br>
 ✅Login<br>
 <http://localhost:8000/login/><br>
+o<br>
+<https://matixxdpls.pythonanywhere.com/login/>
 ✅signup<br>
 <http://localhost:8000/register/><br>
+o<br>
+<https://matixxdpls.pythonanywhere.com/register/>
 ✅perfiles<br>
 <http://localhost:8000/perfil/><br>
+o<br>
+<https://matixxdpls.pythonanywhere.com/perfil/>
 &emsp;    ✅get profile<br>
 &emsp;    ✅update profile<br>
 ✅logout<br>
