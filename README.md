@@ -72,9 +72,5 @@ profecoder:profesor1235<br>
 
 ## Matias Salinas:
 ### Modelos de productos, entradas,salidas y empleados. Cruds de los modelos. SearchBar. Contacto y mensajes. 
-
-## Mauricio lamboglia:
 ### Login, Register , Logout, Perfil , Editar Perfil.
-
-## Isaac Sanabria:
-### Inicio, About, casos de prueba.
+### Inicio, casos de prueba.
